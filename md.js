@@ -29,3 +29,12 @@ function fn1() {
     var ievade = document.getElementById("meginajums").value;
     document.getElementById("ievade").innerHTML = ievade;
 }
+
+function slepsana() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
