@@ -82,3 +82,12 @@ function startTimer(){
     }, 1000);
 }
 
+//const atbilde = await fetch('http://localhost:63342/untitled/5burti.txt');
+//const vardnica = await atbilde.text();
+//document.getElementById("dati").innerHTML = vardnica
+
+jQuery.get('http://localhost:63342/untitled/5burti.txt', function(data) {
+    var items = data.split('\n');
+    document.getElementById("dati").innerHTML = items
+});
+
