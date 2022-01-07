@@ -1,29 +1,23 @@
-let vardi = ['abaks',
-'abate',
-'abats',
-'ābece',
-'ābele',
-'ābols',
-'acīte',
-'adata',
-'ādere',
-'afēra',
-'afiša',
-'agars']
+let masivs = []
 
-document.getElementById("demo").innerHTML = vardi
+jQuery.get('5burti.txt', function(data) {
+    masivs = data.split('\n');
+    document.getElementById("dati").innerHTML = masivs
 
-const viens = vardi[Math.floor(Math.random()*vardi.length)]
-document.getElementById("viens").innerHTML = viens
+    const viensVardsnoMasiva = masivs[Math.floor(Math.random()*masivs.length)]
+    document.getElementById("viensVardsnoMasiva").innerHTML = viensVardsnoMasiva
 
-const sajaukts = viens.split("")
-document.getElementById("sajaukts").innerHTML = sajaukts
+    const sadalitsPaBurtiem = viensVardsnoMasiva.split("")
+    document.getElementById("sadalitsPaBurtiem").innerHTML = sadalitsPaBurtiem
 
-const miniMani = sajaukts.sort((a, b) => 0.5 - Math.random())
-document.getElementById("miniMani").innerHTML = miniMani
+    const sajauktsVards = sadalitsPaBurtiem.sort((a, b) => 0.5 - Math.random())
+    document.getElementById("sajauktsVards").innerHTML = sajauktsVards
 
-const miniManiVards = miniMani.join('')
-document.getElementById("miniManiVards").innerHTML = miniManiVards
+    const putra = sajauktsVards.join('')
+    document.getElementById("putra").innerHTML = putra
+
+
+});
 
 function slepsana() {
     var x = document.getElementById("myDIV");
@@ -82,12 +76,8 @@ function startTimer(){
     }, 1000);
 }
 
-//const atbilde = await fetch('http://localhost:63342/untitled/5burti.txt');
-//const vardnica = await atbilde.text();
-//document.getElementById("dati").innerHTML = vardnica
 
-jQuery.get('http://localhost:63342/untitled/5burti.txt', function(data) {
-    var items = data.split('\n');
-    document.getElementById("dati").innerHTML = items
-});
+
+
+
 

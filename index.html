@@ -1,96 +1,32 @@
-<!doctype html>
-<html lang="lv">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Vārdu spēle</title>
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+<h1 id="display"></h1>
 
-    <title>Sajaukto burtu spēle</title>
-  </head>
-  <body>
-    <header>
-      <div class="px-3 py-2 bg-dark text-white">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-              <i class="bi bi-bootstrap-fill"></i>
-            </a>
-  
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <li>
-                <a href="riktetava.html" class="nav-link text-secondary">
-                  <i class="bi bi-sliders"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="container-md">
+<p id="demo"></p>
 
-        <h1 class="display-1 py-3">Sajaukto burtu spēle</h1>
-        <h2>Apraksts</h2>
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Spēles mērķis
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>Spēles mērķis</strong> ir attīstīt Mazkrūmiņu skolas skolēnu lasītprasmi.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Kā tas notiek?
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <ul>
-                  <li>Spēle izvēlēsies nejaušu vārdu un sajauks burtus nepareizā secībā.</li>
-                  <li>Tavs uzdevums, izvēlēties burtus pēc kārtas tā, lai izveidotos izjauktais vārds.</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row py-2"><p>&nbsp;</p></div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="dropdown">
-                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-mouse"></i>&nbsp;Sākt spēli
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Viegls līmenis</a></li>
-                  <li><a class="dropdown-item" href="#">Vidējs līmenis</a></li>
-                  <li><a class="dropdown-item" href="#">Smags līmenis</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col">
-              <a class="btn btn-success btn-lg" href="rekordi.html" role="button"><i class="bi bi-trophy"></i>&nbsp; Rekordu tabula</a>
-            </div>
-          </div>
-        </div>
-    </div>
-    <footer class="footer fixed-bottom mt-auto py-3 bg-dark text-white">
-      <div class="container">
-        <span class="text-muted">&copy;&nbsp;XXX Gads&nbsp;Mazkrūmiņu skola </span>
-      </div>
-    </footer> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<h1 id="viens"></h1>
 
-  </body>
+<h1 id="sajaukts"></h1>
+
+<h1 id="miniMani"></h1>
+
+<h1 id="miniManiVards"></h1>
+
+
+<input id="meginajums" placeholder="Raksti te...">
+<br>
+<button onclick="fn1()" id="btn1">Šis!</button>
+
+
+<h1 id="ievade"></h1>
+
+<script src="md.js"></script>
+</body>
 </html>
