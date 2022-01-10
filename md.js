@@ -1,18 +1,46 @@
-/*fetch('5burti.txt')
-    .then(response => response.text())
-    .then(text => console.log(text))*/
+/*
+ToDo:
+No sākuma iegūsti datus un tos apstrādā (pa burtiem dalīšana un tā tālāk).
+Tad iegūsti references uz visiem HTML elementiem, ar kuriem strādāsi.
+Tad tiem HTML elementiem uzliec sākotnējās vērtības (ja tā ir domāts) un arī funkcijas, kas nostrādās pie ievades notikumiem (oninput, onclick, ...).
+Un to visu tajā galvenajā asinhronajā funkcijā.
+starp citu, koda likšana kaut kādā galvenajā funkcijā ir ierasta prakse – tas rada scope un no ārpuses nekādi mainīgo vai funkciju nosaukumi nebūs redzami. Tas ir svarīgi, piemēram, lai kodu var dalīt pa moduļiem, kuros var izmantot vienus un tos pašus mainīgo un funkciju nosaukumus – tā, lai netraucē viens otram. Winking face
+*/
 
-async function fetchTest() {
-    let response = await fetch('6burti.txt');
-    let responseText = await response.text();
+result = fetch('6burti.txt')
+result.then(function(response) {
+    return response.text();
+}).then(function (dati) {
+    console.log(dati);
+    masivs6 = dati.split('\n');
+    console.log(masivs6)
+    const viensVardsnoMasiva = masivs6[Math.floor(Math.random()*masivs6.length)]
+    document.getElementById("viensVardsnoMasiva").innerHTML = viensVardsnoMasiva
+    const sadalitsPaBurtiem = viensVardsnoMasiva.split("")
+    const sajauktsVards = sadalitsPaBurtiem.sort((a, b) => 0.5 - Math.random())
+    const putra = sajauktsVards.join('')
+    document.getElementById("putra").innerHTML = putra
+});
+/*then(function fn1() {
+    var ievade = document.getElementById("meginajums").value;
+    document.getElementById("ievade").innerHTML = ievade
+    if (viensVardsnoMasiva == ievade) {
+        console.log('✅');
+    } else {
+        console.log('⛔️');
+    }
+});*/
 
-    document.getElementById('result').innerHTML = responseText;
+function slepsana() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
-(async() => {
-    await fetchTest();
-})();
-
+/*
 let masivs = []
 jQuery.get('5burti.txt', function(data) {
     masivs = data.split('\n');
@@ -30,27 +58,22 @@ jQuery.get('5burti.txt', function(data) {
     const putra = sajauktsVards.join('')
     document.getElementById("putra").innerHTML = putra
 });
+*/
+
+var kontrole = "akords"
 
 
-    function slepsana() {
-        var x = document.getElementById("myDIV");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    function fn1() {
-        var ievade = document.getElementById("meginajums").value;
-        document.getElementById("ievade").innerHTML = ievade;
-    }
-
-/*    if (viensVardsnoMasiva == ievade) {
-        console.log('✅');
+function fn1() {
+    var ievade = document.getElementById("meginajums").value;
+    document.getElementById("ievade").innerHTML = ievade;
+    if (kontrole == ievade) {
+        alert('✅');
     } else {
-        console.log('⛔️');
-    }*/
+        alert('⛔️');
+    }
+}
+
+
 
 
     var minutes =0;
