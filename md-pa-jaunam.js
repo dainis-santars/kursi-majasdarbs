@@ -30,6 +30,22 @@ setInterval(function (){
     document.getElementById("minutes").innerHTML=pad(parseInt(sek/60,10));
 }, 1000);
 
+/* Ilgums */
+function sakumaLaiks() {
+    let currentDate1 = new Date();
+    let time1 = currentDate1.getMinutes() + ":" + currentDate1.getSeconds();
+    console.log(time1)
+}
+function beiguLaiks(){
+    let currentDate2 = new Date();
+    let time2 = currentDate2.getMinutes() + ":" + currentDate2.getSeconds();
+    console.log(time2)
+    // let ilgums = time2 - (sakumaLaiks())
+    // console.log(ilgums)
+}
+var ilgums = beiguLaiks() - sakumaLaiks()
+document.getElementById("ilgums").innerHTML = ilgums
+
 /* lietotāja ievade */
 function panemtTekstu(){
     let input = document.getElementById("ievade1").value;
@@ -49,4 +65,8 @@ function irNavVienadi(){
     if (vert1 == vert2) {alert("sakrīt")}
     else if (vert1 != vert2) {alert("nesakrīt")}
 }
+
+sakumaLaiks();
+panemtTekstu();
 irNavVienadi();
+beiguLaiks();

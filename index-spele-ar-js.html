@@ -32,7 +32,8 @@
         <span id="sekundes">00</span>-->
 </div>
 <h1>Experimenti</h1>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" onclick="startTimer()">Minēt vārdu!</button>
+<span id="ilgums"></span>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" onclick="startTimer(); sakumaLaiks();">Minēt vārdu!</button>
 <div class="modal fade" id="modal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -48,7 +49,7 @@
                 <span id="minutes"></span>.<span id="sekundes"></span>
             </div>
             <div class="modal-footer">
-                <button id="stop" type="button" class="btn btn-primary" onclick="panemtTekstu(); irNavVienadi();">Iesniegt</button>
+                <button id="stop" type="button" class="btn btn-primary" onclick="panemtTekstu(); irNavVienadi(); beiguLaiks();">Iesniegt</button>
                 <span id="ir"></span>
             </div>
         </div>
