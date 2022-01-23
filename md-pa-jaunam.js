@@ -18,7 +18,20 @@ result.then(function(response) {
     document.getElementById("viensVardsnoMasiva").innerHTML = viensVardsnoMasiva
     const sadalitsPaBurtiem = viensVardsnoMasiva.split("")
     const sajauktsVards = sadalitsPaBurtiem.sort((a, b) => 0.5 - Math.random())
+    let pogasHTML = sajauktsVards.map(letter =>
+        `
+      <button
+        class="btn btn-lg btn-primary m-2"
+        id='` + letter + `'
+        onClick="handleGuess('` + letter + `')"
+      >
+        ` + letter + `
+      </button>
+    `).join('');
+
+    document.getElementById('keyboard').innerHTML = pogasHTML;
     const putra = sajauktsVards.join('')
+
     document.getElementById("putra").innerHTML = putra
 });
 
@@ -70,3 +83,4 @@ sakumaLaiks();
 panemtTekstu();
 irNavVienadi();
 beiguLaiks();
+uzblieztPogas();
