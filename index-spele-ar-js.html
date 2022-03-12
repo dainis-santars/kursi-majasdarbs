@@ -20,37 +20,30 @@
 <h1 id="viensVardsnoMasiva"></h1>
 <h1 id="sadalitsPaBurtiem"></h1>
 <h1 id="sajauktsVards"></h1>
-<!--<h1 id="putra"></h1>-->
-<div id="result"></div>
-<!--<button type="button" class="btn btn-primary btn-lg" onclick="slepsana(); startTimer();">Sākt spēli</button>-->
-<div id="myDIV" style="display:none">
-    <label for="meginajums"></label><input id="meginajums" placeholder="Raksti te...">
-        <br>
-        <button onclick="fn1()" id="btn1">Šis!</button>
-        <h1 id="ievade"></h1>
-<!--        <span id="minutes">00.</span>
-        <span id="sekundes">00</span>-->
+
 </div>
 <h1>Experimenti</h1>
-<span id="ilgums"></span>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" onclick="startTimer(); sakumaLaiks();">Minēt vārdu!</button>
+<!--<span id="ilgums"></span>-->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" onclick="sakumaLaiks()">Minēt vārdu!</button>
 <div class="modal fade" id="modal" tabindex="-1">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <h3 class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title" id="putra"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+
             <div class="modal-body">
-                <div id="keyboard"></div>
                 <div class="mb-3">
-                    <label for="ievade1" class="form-label">Tavs minējums</label>
-                    <input id="ievade1" class="form-control" placeholder="minējums">
+                    <h3>Tavs minējums</h3>
+                    <h1 class="display" id="wordSpotlight" ></h1>
                 </div>
-                <span id="minutes"></span>.<span id="sekundes"></span>
+                <div id="keyboard"></div>
+                <h3>Laiks</h3>
+                <span id="ilgums"></span>
             </div>
             <div class="modal-footer">
-                <button id="stop" type="button" class="btn btn-primary" onclick="panemtTekstu(); irNavVienadi(); beiguLaiks();">Iesniegt</button>
+                <button id="stop" type="button" class="btn btn-primary" onclick="beiguLaiks(); cikIlgi();">Iesniegt</button>
                 <span id="ir"></span>
             </div>
         </div>
