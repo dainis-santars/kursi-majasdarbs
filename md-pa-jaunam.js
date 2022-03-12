@@ -1,4 +1,5 @@
 let guessed = [];
+let ilgums = 0;
 result = fetch('6burti.txt')
 result.then(function(response) {
     return response.text();
@@ -45,11 +46,30 @@ function handleGuess(chosenLetter) {
     document.getElementById('wordSpotlight').innerHTML = guessed.join('');
 }
 
+function sakumaLaiks() {
+    const currentDate1 = new Date();
+    const time1 = currentDate1.getTime();
+    console.log(time1)
+    return time1
+}
+function beiguLaiks() {
+    const currentDate2 = new Date();
+    const time2 = currentDate2.getTime();
+    console.log(time2)
+    return time2
+}
+function cikIlgi() {
+    let ilgums = beiguLaiks() - sakumaLaiks()
+    document.getElementById("ilgums").innerHTML = ilgums
+    console.log(ilgums)
+}
+// var timer = setInterval(tikskis, 1000);
+
 sakumaLaiks();
 panemtTekstu();
 irNavVienadi();
 beiguLaiks();
-
+cikIlgi();
 guessedWord();
 handleGuess();
 
