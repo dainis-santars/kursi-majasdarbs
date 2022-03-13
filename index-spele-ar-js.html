@@ -38,7 +38,13 @@
                     <h1 class="display" id="wordSpotlight" ></h1>
                 </div>
                 <div id="keyboard"></div>
-                <h3>Laiks:&nbsp;<span id="ilgums"></span></h3>
+                <h3>Laiks:&nbsp;
+                    <span id="ilgums">
+                        <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+                            <span class="sr-only"></span>
+                        </div>
+                    </span>
+                </h3>
             </div>
             <div class="modal-footer">
                 <button id="stop" type="button" class="btn btn-primary" onclick="beiguLaiks(); cikIlgi();">Iesniegt</button>

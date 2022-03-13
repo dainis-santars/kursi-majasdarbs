@@ -1,5 +1,7 @@
 let guessed = [];
 let ilgums = 0;
+
+/* Vārdu spēles ielāde */
 result = fetch('6burti.txt')
 result.then(function(response) {
     return response.text();
@@ -34,6 +36,7 @@ result.then(function(response) {
     console.log(answer)
 });
 
+/* Pogas un lietotāja ievade */
 function guessedWord() {
     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
 }
@@ -43,6 +46,7 @@ function handleGuess(chosenLetter) {
     console.log(guessed)
     document.getElementById('wordSpotlight').innerHTML = guessed.join('');
 }
+
 /* Laika apstrāde */
 function sakumaLaiks() {
     localStorage.setItem("sakums", Date.now());
