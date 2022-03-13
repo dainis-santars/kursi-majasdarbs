@@ -36,34 +36,28 @@ result.then(function(response) {
 
 function guessedWord() {
     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-
 }
-
 function handleGuess(chosenLetter) {
-    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    guessed.push(chosenLetter);
     document.getElementById(chosenLetter).setAttribute('disabled', true);
     console.log(guessed)
     document.getElementById('wordSpotlight').innerHTML = guessed.join('');
 }
-
+/* Laika apstrāde */
 function sakumaLaiks() {
-    const currentDate1 = new Date();
-    const time1 = currentDate1.getTime();
-    console.log(time1)
-    return time1
+    localStorage.setItem("sakums", Date.now());
 }
 function beiguLaiks() {
-    const currentDate2 = new Date();
-    const time2 = currentDate2.getTime();
-    console.log(time2)
-    return time2
+    localStorage.setItem("beigas", Date.now());
 }
 function cikIlgi() {
-    let ilgums = beiguLaiks() - sakumaLaiks()
+    let x = Number(localStorage.getItem("sakums"));
+    console.log(x)
+    let y = Number(localStorage.getItem("beigas"));
+    console.log(y)
+    let ilgums = Math.round((y - x)/1000)
     document.getElementById("ilgums").innerHTML = ilgums
-    console.log(ilgums)
 }
-// var timer = setInterval(tikskis, 1000);
 
 sakumaLaiks();
 panemtTekstu();
