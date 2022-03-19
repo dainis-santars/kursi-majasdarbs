@@ -18,7 +18,7 @@ result.then(function(response) {
     let pogasHTML = sajauktsVards.map(letter =>
         `
       <button
-        class="btn btn-lg btn-primary m-2"
+        class="btn btn-outline-primary btn-lg"
         id='` + letter + `'
         onClick="handleGuess('` + letter + `')"
       >
@@ -28,9 +28,9 @@ result.then(function(response) {
 
     document.getElementById('keyboard').innerHTML = pogasHTML;
 
-    const putra = sajauktsVards.join('')
+    const putra = sajauktsVards.join('  ')
 
-    document.getElementById("putra").innerHTML = putra
+    document.getElementById("putra").innerHTML = 'Sajauktais vārds: ' + putra
 
     let answer = viensVardsnoMasiva
     console.log(answer)
