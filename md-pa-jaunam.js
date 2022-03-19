@@ -15,7 +15,7 @@ result.then(function(response) {
     console.log(masivs6)
     const viensVardsnoMasiva = masivs6[Math.floor(Math.random()*masivs6.length)]
     console.log(viensVardsnoMasiva)
-    document.getElementById("viensVardsnoMasiva").innerHTML = viensVardsnoMasiva
+    // document.getElementById("viensVardsnoMasiva").innerHTML = viensVardsnoMasiva
     const sadalitsPaBurtiem = viensVardsnoMasiva.split("")
     const sajauktsVards = sadalitsPaBurtiem.sort((a, b) => 0.5 - Math.random())
     let wordStatus = null;
@@ -69,11 +69,12 @@ function cikIlgi() {
     document.getElementById("ilgums").innerHTML = ilgums
 }
 
+/* Pārbaude, vai vārdi sakrita */
 function turpinajums() {
     answer = localStorage.getItem('answer')
     console.log("1",atbilde,"2",answer)
     if (atbilde === answer) {
-        alert("sakrita!")
+        document.getElementById("uzModal").style.visibility = "visible";
     }
 }
 
