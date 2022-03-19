@@ -1,5 +1,9 @@
 let guessed = [];
 let ilgums = 0;
+let vards = document.querySelector('.vards');
+let atbilde = '';
+let viensVardsnoMasiva = '';
+let answer = '';
 
 /* Vārdu spēles ielāde */
 result = fetch('6burti.txt')
@@ -32,19 +36,21 @@ result.then(function(response) {
 
     document.getElementById("putra").innerHTML = 'Sajauktais vārds: ' + putra
 
-    let answer = viensVardsnoMasiva
-    console.log(answer)
+    let answer = viensVardsnoMasiva;
+    localStorage.setItem('answer', viensVardsnoMasiva);
 });
 
 /* Pogas un lietotāja ievade */
-function guessedWord() {
-    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-}
+// function guessedWord() {
+//     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+// }
 function handleGuess(chosenLetter) {
     guessed.push(chosenLetter);
     document.getElementById(chosenLetter).setAttribute('disabled', true);
     console.log(guessed)
     document.getElementById('wordSpotlight').innerHTML = guessed.join('');
+    atbilde = guessed.join('');
+    console.log(atbilde)
 }
 
 /* Laika apstrāde */
@@ -63,6 +69,14 @@ function cikIlgi() {
     document.getElementById("ilgums").innerHTML = ilgums
 }
 
+function turpinajums() {
+    answer = localStorage.getItem('answer')
+    console.log("1",atbilde,"2",answer)
+    if (atbilde === answer) {
+        alert("sakrita!")
+    }
+}
+
 sakumaLaiks();
 panemtTekstu();
 irNavVienadi();
@@ -72,3 +86,5 @@ guessedWord();
 handleGuess();
 
 uzblieztPogas();
+turpinajums();
+
