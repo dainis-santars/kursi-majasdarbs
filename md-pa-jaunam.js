@@ -4,12 +4,12 @@ let vards = document.querySelector('.vards');
 let atbilde = '';
 let viensVardsnoMasiva = '';
 let answer = '';
-let maxWrong = 6;
 let kluda = 0;
 let punkti = 0;
 
 
 /* Vārdu spēles ielāde */
+function main(){
 result = fetch('6burti.txt')
 result.then(function(response) {
     return response.text();
@@ -43,6 +43,7 @@ result.then(function(response) {
     let answer = viensVardsnoMasiva;
     localStorage.setItem('answer', viensVardsnoMasiva);
 });
+}
 
 /* Pogas un lietotāja ievade */
 // function guessedWord() {
@@ -81,7 +82,13 @@ function atbildesApstrade() {
     console.log("1",atbilde,"2",answer)
     if (atbilde === answer) {
         document.getElementById("uzModal").style.visibility = "visible";
-        document.getElementById("punkti").innerHTML = punkti
+        document.getElementById("punkti").innerHTML = punkti;
+        main();
+        document.getElementById('wordSpotlight').innerHTML = "&nbsp;";
+        guessed = [];
+        punkti = 0;
+        ilgums = 0;
+        handleGuess();
     } else {
         kluda = kluda + 1
         console.log(kluda)
@@ -90,13 +97,16 @@ function atbildesApstrade() {
 }
 
 function turpinajums() {
+    let punkti1 = document.getElementById("punkti").innerHTML = punkti
     let punktiUzTabulu = 0
-    punktiUzTabulu = punktiUzTabulu + punkti
+    punktiUzTabulu = punktiUzTabulu + punkti1
     document.getElementById("punktiUzTabulu").innerHTML = punktiUzTabulu
+    console.log("zis",punkti1,punktiUzTabulu)
 
 }
 
 
+main();
 sakumaLaiks();
 panemtTekstu();
 irNavVienadi();
