@@ -4,6 +4,10 @@ let vards = document.querySelector('.vards');
 let atbilde = '';
 let viensVardsnoMasiva = '';
 let answer = '';
+let maxWrong = 6;
+let kluda = 0;
+let punkti = 0;
+
 
 /* Vārdu spēles ielāde */
 result = fetch('6burti.txt')
@@ -67,16 +71,31 @@ function cikIlgi() {
     console.log(y)
     let ilgums = Math.round((y - x)/1000)
     document.getElementById("ilgums").innerHTML = ilgums
+    punkti = 30 - ilgums
 }
 
+
 /* Pārbaude, vai vārdi sakrita */
-function turpinajums() {
+function atbildesApstrade() {
     answer = localStorage.getItem('answer')
     console.log("1",atbilde,"2",answer)
     if (atbilde === answer) {
         document.getElementById("uzModal").style.visibility = "visible";
+        document.getElementById("punkti").innerHTML = punkti
+    } else {
+        kluda = kluda + 1
+        console.log(kluda)
+        document.getElementById('wordSpotlight').innerHTML = '<i class=\"bi bi-hand-thumbs-down\"></i>&nbsp;Nepareizi';
     }
 }
+
+function turpinajums() {
+    let punktiUzTabulu = 0
+    punktiUzTabulu = punktiUzTabulu + punkti
+    document.getElementById("punktiUzTabulu").innerHTML = punktiUzTabulu
+
+}
+
 
 sakumaLaiks();
 panemtTekstu();
@@ -87,5 +106,6 @@ guessedWord();
 handleGuess();
 
 uzblieztPogas();
+atbildesApstrade();
 turpinajums();
 

@@ -34,6 +34,9 @@
                                         <h1 class="display" id="wordSpotlight" ><i class="bi bi-pen"></i></h1>
                                     </div>
                                     <div id="keyboard"></div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
                                     <h3>Laiks:&nbsp;
                                         <span id="ilgums">
                         <div class="spinner-grow spinner-grow-sm text-primary" role="status">
@@ -41,12 +44,18 @@
                         </div>
                     </span>
                                     </h3>
+                                                </div>
+                                            <div class="col">
+                                                <h3>Punkti: <span id="punkti">0</span></h3>
+                                            </div>
+                                            </div>
+                                        </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button id="stop" type="button" class="btn btn-primary" onclick="beiguLaiks(); cikIlgi(); turpinajums();">Iesniegt</button>
+                                    <button id="stop" type="button" class="btn btn-primary" onclick="beiguLaiks(); cikIlgi(); atbildesApstrade();">Iesniegt</button>
                                     <div class="invisible">
-                                        <button id="uzModal" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#uzTabulu" >
-                                            Uz rekordiem
+                                        <button id="uzModal" class="btn btn-success" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#uzTabulu" >
+                                            <i class="bi bi-trophy"></i>&nbsp;Jēj, uz rekordiem!
                                         </button>
                                     </div>
                                     <span id="ir"></span>
@@ -69,6 +78,7 @@
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control form-control-lg" id="floatingInput" placeholder="Tavs vārds">
                                             <label for="floatingInput">Tavs vārds</label>
+                                            <h3>Iegūtie punkti: <span id="punktiUzTabulu"></span></h3>
                                         </div>
                                         <!--                    </div>-->
                                     </form>
@@ -118,7 +128,7 @@
             </h2>
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                 <div class="accordion-body">
-                    Spēli izveidoja Dainis StartIT kursu ietvaros. Saites uz spēles izejas kodu <a href="https://github.com/dainis-santars/kursi-majasdarbs">GitHub</a>, Repl.it.
+                    Spēli izveidoja Dainis <a href="https://startit.lv">StartIT</a> kursu ietvaros. Saites uz spēles pirmkodu <a href="https://github.com/dainis-santars/kursi-majasdarbs">GitHub</a>, Repl.it.
                 </div>
             </div>
         </div>
