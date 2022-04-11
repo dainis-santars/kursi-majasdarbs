@@ -37,7 +37,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col">
-                                    <h3>Laiks:&nbsp;
+                                    <h3>&nbsp;
                                         <span id="ilgums">
                         <div class="spinner-grow spinner-grow-sm text-primary" role="status">
                             <span class="sr-only"></span>
@@ -76,15 +76,15 @@
                                     <form>
                                         <!--                    <div class="col-md-3">-->
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control form-control-lg" id="floatingInput" placeholder="Tavs vārds">
+                                            <input type="text" class="form-control form-control-lg vards" id="floatingInput" placeholder="Tavs vārds">
                                             <label for="floatingInput">Tavs vārds</label>
-                                            <h3>Iegūtie punkti: <span id="punktiUzTabulu"></span></h3>
+                                            <h3>Iegūtie punkti: <span id="punktiUzTabulu" class="punkti"></span></h3>
                                         </div>
                                         <!--                    </div>-->
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Saglabāt izmaiņas</button>
+                                    <button type="button" class="btn btn-primary" onclick="rekorduTabula();">Saglabāt izmaiņas</button>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
             </h2>
             <div id="panelsStayOpen-collapseTris" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                 <div class="accordion-body">
-                    Te ir rezultātu tabula
+                    <div class="rekordaIeraksts"><span id="rekordaIeraksts">Te</span></div> Te ir rezultātu tabula
                 </div>
             </div>
         </div>

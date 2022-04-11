@@ -6,6 +6,10 @@ let viensVardsnoMasiva = '';
 let answer = '';
 let kluda = 0;
 let punkti = 0;
+let punktiUzTabulu = 0;
+const API = "https://kursi-burtuspele.dainisantars.repl.co";
+let punktiRekords = document.querySelector('.punkti');
+let vardsRekords = document.querySelector('.vards');
 
 
 /* Vārdu spēles ielāde */
@@ -42,6 +46,7 @@ result.then(function(response) {
 
     let answer = viensVardsnoMasiva;
     localStorage.setItem('answer', viensVardsnoMasiva);
+    localStorage.setItem("sakums", Date.now());
 });
 }
 
@@ -73,6 +78,7 @@ function cikIlgi() {
     let ilgums = Math.round((y - x)/1000)
     document.getElementById("ilgums").innerHTML = ilgums
     punkti = 30 - ilgums
+    punktiUzTabulu = punktiUzTabulu + punkti
 }
 
 
@@ -87,7 +93,8 @@ function atbildesApstrade() {
         document.getElementById('wordSpotlight').innerHTML = "&nbsp;";
         guessed = [];
         punkti = 0;
-        ilgums = 0;
+        // ilgums = 0;
+        document.getElementById("ilgums").innerHTML = "<div class=\"spinner-grow spinner-grow-sm text-primary\" role=\"status\">"
         handleGuess();
     } else {
         kluda = kluda + 1
@@ -98,13 +105,27 @@ function atbildesApstrade() {
 
 function turpinajums() {
     let punkti1 = document.getElementById("punkti").innerHTML = punkti
-    let punktiUzTabulu = 0
+
     punktiUzTabulu = punktiUzTabulu + punkti1
     document.getElementById("punktiUzTabulu").innerHTML = punktiUzTabulu
     console.log("zis",punkti1,punktiUzTabulu)
 
 }
 
+function rekorduTabula()
+{
+    console.log("ww",punktiUzTabulu);
+    rekordaIeraksts.innerHTML = rekordaIeraksts.innerHTML + '<br />' + punktiUzTabulu.value;
+    fetch(API + '/sutit/' + vardsRekords.value + '/' + punktiUzTabulu)
+}
+
+async function ieladetRekorduTabulu()
+{
+    let datiNoServera = await fetch(API + '/lasit');
+    let dati = await datiNoServera.text();
+    // console.log(dati)
+    zinas.innerHTML = dati;
+}
 
 main();
 sakumaLaiks();
@@ -118,4 +139,5 @@ handleGuess();
 uzblieztPogas();
 atbildesApstrade();
 turpinajums();
-
+rekorduTabula();
+ieladetRekorduTabulu();
