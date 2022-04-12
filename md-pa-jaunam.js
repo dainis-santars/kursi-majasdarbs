@@ -119,13 +119,23 @@ function rekorduTabula()
     fetch(API + '/sutit/' + vardsRekords.value + '/' + punktiUzTabulu)
 }
 
+let topaIeraksti = document.querySelector('.tops');
+
 async function ieladetRekorduTabulu()
 {
     let datiNoServera = await fetch(API + '/lasit');
-    let dati = await datiNoServera.text();
-    // console.log(dati)
-    zinas.innerHTML = dati;
+    let dati = await datiNoServera.json();
+    // console.log(await dati[0]['laiks'])
+    topaIeraksti.innerHTML = '';
+    i = 0;
+    while ( i < await dati.length ) {
+        //console.log(i);
+        // topaIeraksti.innerHTML = topaIeraksti.innerHTML + dati[i]['vards'] + ': ' + dati[i]['punkti'] + ' plkst. ' + dati[i]['laiks'] + '<br />';
+        topaIeraksti.innerHTML = topaIeraksti.innerHTML + '<li>' + dati[i]['vards'] + ': ' + dati[i]['punkti'] + ' plkst. ' + dati[i]['laiks'] + '</li>';
+        i = i + 1;
+    }
 }
+setInterval( ieladetRekorduTabulu, 10000 )
 
 main();
 sakumaLaiks();
