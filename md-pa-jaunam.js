@@ -123,7 +123,7 @@ let topaIeraksti = document.querySelector('.tops');
 
 async function ieladetRekorduTabulu()
 {
-    let datiNoServera = await fetch(API + '/lasit');
+    let datiNoServera = await fetch(API + '/tops');
     let dati = await datiNoServera.json();
     // console.log(await dati[0]['laiks'])
     topaIeraksti.innerHTML = '';
@@ -131,7 +131,7 @@ async function ieladetRekorduTabulu()
     while ( i < await dati.length ) {
         //console.log(i);
         // topaIeraksti.innerHTML = topaIeraksti.innerHTML + dati[i]['vards'] + ': ' + dati[i]['punkti'] + ' plkst. ' + dati[i]['laiks'] + '<br />';
-        topaIeraksti.innerHTML = topaIeraksti.innerHTML + '<li>' + dati[i]['vards'] + ': ' + dati[i]['punkti'] + ' plkst. ' + dati[i]['laiks'] + '</li>';
+        topaIeraksti.innerHTML = topaIeraksti.innerHTML + '<li>' + dati[i]['vards'] + ': ' + dati[i]['punkti'] + '<small class="text-muted"> kaut kad ' + dati[i]['laiks'] + '</small></li>';
         i = i + 1;
     }
 }
